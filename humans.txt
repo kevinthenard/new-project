@@ -1,0 +1,15 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Kévin Thenard -- front end developer -- @kevinthenard
+
+# THANKS
+
+    Me
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5, JS
+    jQuery, Mustache, Bootstrap, is.js, jquery.i18n, jQuery Validate, owl.carousel, JQuery Cookies, Query-Object

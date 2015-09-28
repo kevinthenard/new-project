@@ -1,0 +1,6 @@
+.project
+node_modules/
+bin/
+.sass-cache/
+*.7z
+*.zip

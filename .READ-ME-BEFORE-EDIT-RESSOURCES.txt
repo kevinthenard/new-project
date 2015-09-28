@@ -1,0 +1,42 @@
+- Installer Grunt et SASS/COMPASS (et donc NodeJS).
+
+- Placer les images dans _img/ qui seront minifiées et placées dans images/ , et surtout pas directement dans images/ .
+- Modifier les fichiers .js qui seront minifiés en built.js et built.min.js
+- Modifier les fichiers .scss qui seront compilés et minifiés en screen.css et screen.min.css, et print.css
+- Pas (encore) de font avec images SVG
+- Liste des packages Grunt dans package.json : à installer uniquement via un npm install
+
+Enjoy !
+
+
+RAPPEL GRUNT :
+
+Grunt est un executeur de tâches.
+On lui donne plusieurs tâches à effectuer ainsi que le moment à les executer (la plupart du temps soit manuellement, soit on les execute à l’enregistrement d’un fichier).
+
+Le fichier le plus important : le gruntfile.js
+Il regroupe toutes actions qui sont effectuées, dans l’ordre.
+
+On appelle Grunt via la commande « grunt watch » pour qu’il s’execute en arrière-plan et execute les actions correspondantes, à savoir :
+- Imagemin : on prend les images du dossier img, on les copie, et les met dans le dossier images, en les optimisant selon les paramètres cités + hauts dans le Gruntfile (optimizationLevel: 7 etc.).
+ATTENTION : Gourmand en ressource processeur et RAM, et long à s’executer.
+
+- Compass : transforme le SCSS et ses fonctions en CSS, minifie et créé les sprites (et les typos, mais il n’y a pas de création de typo à la volée sur Nocibé, ce qui pourrait être le cas dans le futur). Il faut que Ruby, SASS et Compass soient installés en + de Grunt.
+
+- postcss: on vérifie le CSS, on le complète pour améliorer la compatibilité (ici, compatiblité browsers: ['last 3 version'] ) donc les 3 dernières versions majeures des navigateurs courants selon la BDD de CanIUse.com
+
+- JSHint : vérifie les erreurs JS (ex : == au lieu de ===, ou encore les ; manquants, ce qui peut être bloquant pour IE ou autre). Le résultat de cette commande s’affiche dans la console.
+
+- Concat : concaténation des .js (dont main.js) dans l’ordre défini en haut de ce fichier, en 1 seul (built.js)
+
+- Uglify : minification JS de built.js en built.min.js
+
+Pour info, en local et en dev : ce sont les fichiers NON-MINIFIES et NON-COMPILES qui sont appelés (visibles dans JS.JSPF).
+
+La console sort un message d’erreur en cas d’erreur mineure ou majeure (bloquante).
+Il y a actuellement 14 « erreurs » dans main.js, les « erreurs » du script de tags, les seules on va dire « autorisées » car ce sont des erreurs qui n’impacteront ni un utilisateur ni un navigateur … (typiquement, on se fait refouler 14 fois parce qu’on utilise «  .attr("onclick", "javascript: …") » ce qui est une très mauvaise pratique, mais demandé par l'équipe marketing.
+
+Pour + d’infos : http://la-cascade.ghost.io/grunt-pour-ceux-qui-pensent-que-grunt-est-complique/
+
+Pour l’installer : http://putaindecode.fr/posts/js/premiers-pas-avec-grunt/
+Normalement, à l’étape d’installation des packages, on peut se contenter de « npm install » , qui aura pour effet d’ouvrir package.json et installer ce qu’il y a dedans avec les versions écrites.
