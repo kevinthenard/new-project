@@ -117,7 +117,12 @@ a{
 		outline: none;
 	}
 }
-
+p{
+	margin: 0;
+}
+ul{
+	list-style-type: none;
+}
 //menu
 #menu{
 	display: none;
@@ -324,11 +329,22 @@ body > section{
 	background-color: white;
 	padding: 20px;
 	@include box-shadow(0px 3px 5px 3px rgba($gray-dark,0.5));
+	@extend .row;
 	> header{
 		@extend .col-xs-12;
 	}
 	> article{
 		@extend .col-xs-9;
+		a{
+			@extend .col-xs-12;
+			color: $main-color;
+			&:hover{
+				background-color: lighten($main-color, 50%);
+				span{
+					text-decoration: underline;
+				}
+			};
+		}
 	}
 	> aside{
 		@extend .col-xs-3;
@@ -342,6 +358,7 @@ body > section{
 
 //footer
 body > footer{
+	@extend .row;
 	padding: 20px;
 	color: #666;
 	font-size: 12px;
@@ -516,3 +533,39 @@ body > footer{
 	}
 }
 // end formulaires
+
+// review
+
+.reviews {
+    /*margin-bottom: 15px;*/
+    .icons-star {
+        display: inline-block;
+        vertical-align: middle;
+        width: 80px;
+        background-repeat: repeat-x;
+    }
+    .icons-star-full,
+    .icons-star-big-full {
+        background-repeat: repeat-x;
+    }
+    .icons-star-big {
+        display: inline-block;
+        vertical-align: middle;
+        background-repeat: repeat-x;
+        width: 120px;
+    }
+    span {
+        vertical-align: middle;
+        padding: 0 10px;
+        font-weight: bold;
+        color: $main-color;
+        font-size: 14px;
+    }
+    a {
+        vertical-align: middle;
+        color: #9e9491;
+        font-size: 12px;
+    }
+}
+
+// end review

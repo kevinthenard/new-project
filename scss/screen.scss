@@ -4,7 +4,7 @@
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
 
-// // Reset and dependencies
+// Reset and dependencies
 @import "bootstrap/normalize";
 @import "bootstrap/print";
 
@@ -18,7 +18,7 @@
 @import "bootstrap/forms";
 @import "bootstrap/buttons";
 
-// // Components
+// Components
 @import "bootstrap/animation";
 @import "bootstrap/dropdown";
 @import "bootstrap/button-group";
@@ -50,7 +50,10 @@
 @import "bootstrap/utilities-spacing";
 @import "bootstrap/utilities-responsive";
 
+// Mixins
+@import "sprites/sprite";
+@import "sprites/sprite-repeat";
+@import "mixins/main";
 
 // Custom
-
 @import "custom/main";

@@ -59,7 +59,7 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: '_img/',
                     src: ['**/*.png'],
-                    dest: 'images/',
+                    dest: 'img/',
                     ext: '.png'
                   }
                 ]
@@ -73,7 +73,7 @@ module.exports = function(grunt) {
                   expand: true,
                   cwd: '_img/',
                   src: ['**/*.jpg'],
-                  dest: 'images/',
+                  dest: 'img/',
                   ext: '.jpg'
                 }
               ]
@@ -86,7 +86,7 @@ module.exports = function(grunt) {
                   expand: true,
                   cwd: '_img/',
                   src: ['**/*.gif'],
-                  dest: 'images/',
+                  dest: 'img/',
                   ext: '.gif'
               }]
             }
@@ -128,7 +128,7 @@ module.exports = function(grunt) {
                 tasks: ['imagemin']
             },
             compass: {
-                files: ['scss/*.scss', 'scss/bootstrap/*.scss', 'scss/mixin/*.scss', 'scss/custom/*.scss'],
+                files: ['scss/*.scss', 'scss/bootstrap/*.scss', 'scss/mixin/*.scss', 'scss/sprites/*.scss', 'scss/custom/*.scss'],
                 tasks: ['compass']
             },
             postcss: {

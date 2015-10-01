@@ -9925,9 +9925,7 @@ function messageModalError(){
 
 
 function showModal(tit1, tit2, cont, canc, vali){
-    var clas = "mod_"/* + Math.random().toString(36).substring(7)*/;
     $("#modal").append(Mustache.render(modal, {
-        classe : clas,
         title : tit1,
         title2 : tit2,
         content : cont,

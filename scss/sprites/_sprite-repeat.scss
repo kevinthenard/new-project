@@ -1,0 +1,27 @@
+/*$icons-star-repeat: repeat-x;
+$icons-star-full-repeat: repeat-x;
+$icons-star-big-repeat: repeat-x;
+$icons-star-big-full-repeat: repeat-x;
+$icons-pattern-repeat: repeat;
+
+/* $icons-layout:smart; */
+
+/*.tototiti{
+	color: blue;
+}
+
+@import "compass/utilities/sprites";
+$icons-repeat-sprite-dimensions: true;
+@import "icons-repeat/*.png";
+@include all-icons-repeat-sprites;  
+
+@mixin sprite($name) {
+	@extend .icons-repeat-#{$name};
+}  
+/*@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 2) {
+	
+}*/
+/*i[class*="icons-"] {
+  display: inline-block;
+  vertical-align: middle;
+}*/
