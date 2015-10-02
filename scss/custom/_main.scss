@@ -1,5 +1,6 @@
-$main-color: $brand-primary;
-$second-color: #ed6a34;
+$main-color: 		$brand-primary;
+$second-color:  	#ed6a34;
+$third-color: 		#282a34;
 
 /* RAPPEL:
 
@@ -45,8 +46,6 @@ $num : 5, 10, 15, 20, 25, 30, 40, 50, 60, 80;
 	    }
 	}
 }
-
-
 
 
 .clear{
@@ -122,6 +121,8 @@ p{
 }
 ul{
 	list-style-type: none;
+	margin: 0;
+	padding: 0;
 }
 //menu
 #menu{
@@ -353,6 +354,10 @@ body > section{
 		clear: both;
 		@extend .col-xs-12;
 	}
+	>footer{
+		clear: both;
+		padding: 20px;
+	}
 }
 //end content
 
@@ -360,6 +365,7 @@ body > section{
 body > footer{
 	@extend .row;
 	padding: 20px;
+	clear: both;
 	color: #666;
 	font-size: 12px;
 	a{
@@ -389,6 +395,7 @@ body > footer{
 		@extend .list-unstyled;
 	}
 	.alexa{
+		margin-top: 20px;
 		img{
 			@extend .img-responsive;
 		}
@@ -405,7 +412,6 @@ body > footer{
 //end footer
 
 // modales
-
 .modal-dialog{
 	background-color: white;
 	.modal-content{
@@ -414,50 +420,51 @@ body > footer{
 		border-radius: none;
 	}
 }
-
 // end modales
 
 // formulaires
 .form {
 	position: relative;
+	legend{
+		font-size: 1.2rem;
+		margin: 0;
+	}
 	//@supports (pointer-events: none) and ((-webkit-appearance: none) or (-moz-appearance: none) or (appearance: none)) {
 		select {
 			-webkit-appearance: none;
 			-moz-appearance: none;
 			appearance: none;
 			cursor: pointer;
-		}
-		&:before {
-			content:'';
-			position: absolute;
-			right: 21px;
-			top: 1px;
-			bottom: 1px;
-			width: 38px;
-			border-left: 1px solid $main-color;
-			background-color: transparent;
-			pointer-events: none;
-		}
-		&:after {
-			content:'';
-			position: absolute;
-			right: 34px;
-			top: 23px;
-			width: 10px;
-			height: 10px;
-			border-left: 1px solid #b1a297;
-			border-bottom: 1px solid #b1a297;
-			background-color: transparent;
-			@include rotate(-45deg);
-			pointer-events: none;
+			&:before {
+				content:'';
+				position: absolute;
+				right: 21px;
+				top: 1px;
+				bottom: 1px;
+				width: 38px;
+				border-left: 1px solid $main-color;
+				background-color: transparent;
+				pointer-events: none;
+			}
+			&:after {
+				content:'';
+				position: absolute;
+				right: 34px;
+				top: 23px;
+				width: 10px;
+				height: 10px;
+				border-left: 1px solid #b1a297;
+				border-bottom: 1px solid #b1a297;
+				background-color: transparent;
+				@include rotate(-45deg);
+				pointer-events: none;
+			}
 		}
 	//}
 	label:not(.error) {
 		display: block;
 		margin-bottom: 5px;
-		font-size: 25px;
 		text-align: left;
-		color: $main-color;
 		&:not(.bold){
 			font-weight: normal;
 		}
@@ -471,7 +478,7 @@ body > footer{
 	input[type="text"],input[type="password"], input[type="email"] {
 		height: 38px;
 		padding: 0 15px;
-		border: 1px solid $main-color;
+		border: 1px solid $gray-lighter;
 		outline: 0;
 		&.error {
 			border-color: $error;
@@ -569,3 +576,29 @@ body > footer{
 }
 
 // end review
+
+// titles
+
+.main-title{
+    background-color: #282a34;
+    border-color: $gray-lightest;
+    border-style: none none solid;
+    border-width: 1px;
+    color: white;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+}
+.second-title{
+	font-size: 1.3em;
+    margin: 10px;
+}
+.tird-title{
+
+}
+
+// end titles
+
