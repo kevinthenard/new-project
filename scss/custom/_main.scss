@@ -269,7 +269,7 @@ body > header{
 		#navigation{
 			// affiché
 			transition-property: all;
-			transition-duration: 3s;
+			transition-duration: 1s;
 			transition-timing-function: ease;
 
 			background-color: lighten($second-color, 15%);
