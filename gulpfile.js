@@ -9,46 +9,46 @@ var plumber     = require('gulp-plumber');
 var iconfont    = require('gulp-iconfont');
 var iconfontCss = require('gulp-iconfont-css');
 
-gulp.task('connect', function() {
+/*gulp.task('connect', function() {
   gulp.src('./dist')
     .pipe(webserver({
       livereload: true
     }));
-});
+});*/
 
-gulp.task('html', function () {
+/*gulp.task('html', function () {
   gulp.src(['./templates/*.jade', './templates/advantages/*.jade'])
     .pipe(plumber({errorHandler: notify.onError("Error with jade : <%= error.message %>")}))
     .pipe(jade())
     .pipe(gulp.dest('./dist/'));
-});
+});*/
 
 gulp.task('sass', function () {
-  gulp.src('./assets/sass/*.scss')
+  gulp.src('./scss/*.scss')
     .pipe(plumber({errorHandler: notify.onError("Error with sass : <%= error.message %>")}))
     .pipe(sass())
-    .pipe(gulp.dest('./dist/css'));
+    .pipe(gulp.dest('./css'));
 });
 
 gulp.task('js', function () {
-  gulp.src('./assets/js/app.js')
+  gulp.src('./js/main.js')
     .pipe(plumber({errorHandler: notify.onError("Error with js : <%= error.message %>")}))
     .pipe(browserify())
-    .pipe(gulp.dest('./dist/js/'));
+    .pipe(gulp.dest('./js/'));
 });
 
 gulp.task('images', function () {
-  gulp.src('./assets/images/**/*')
+  gulp.src('./_img/**/*')
     .pipe(plumber({errorHandler: notify.onError("Error with images : <%= error.message %>")}))
-    .pipe(gulp.dest('./dist/images/'));
+    .pipe(gulp.dest('./img/'));
 });
 
 gulp.task('icons', function() {
-  gulp.src('./assets/icons/**/*')
+  gulp.src('./icons/**/*')
     .pipe(plumber({errorHandler: notify.onError("Error with icons : <%= error.message %>")}))
     .pipe(iconfontCss({
       fontName: 'icons',
-      targetPath: '../../dist/css/icons.css',
+      targetPath: '../../css/icons.css',
       fontPath: '../fonts/'
     }))
     .pipe(iconfont({
@@ -62,15 +62,15 @@ gulp.task('watch', function() {
   watch('./scss/**/*.scss', function () {
     gulp.start('sass');
   });
-  watch('./_img/**/*', function () {
-    gulp.start('images');
-  });
   watch('./_img/icons/**/*', function () {
     gulp.start('icons');
   });
-  watch('./templates/**/*.jade', function () {
-    gulp.start('html');
+  watch('./_img/**/*', function () {
+    gulp.start('images');
   });
+  //watch('./templates/**/*.jade', function () {
+  //  gulp.start('html');
+  //});
   watch('./js/**/*.js', function () {
     gulp.start('js');
   });

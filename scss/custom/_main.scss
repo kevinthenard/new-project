@@ -335,10 +335,21 @@ body > section{
 		@extend .col-xs-12;
 	}
 	> article{
-		@extend .col-xs-9;
+		@extend .col-md-8, .col-xs-12;
 		a{
 			@extend .col-xs-12;
 			color: $main-color;
+			> div{
+				@extend .row;
+			}
+			.img-music{
+				@extend .col-xs-4, .col-sm-3;
+				padding: 20px;
+			}
+			.title-music{
+				@extend .col-xs-4, .col-sm-5;
+				padding: 10px;
+			}
 			&:hover{
 				background-color: lighten($main-color, 50%);
 				span{
@@ -348,7 +359,7 @@ body > section{
 		}
 	}
 	> aside{
-		@extend .col-xs-3;
+		@extend .col-md-4, .col-xs-12;
 	}
 	> header{
 		clear: both;

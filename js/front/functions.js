@@ -249,3 +249,19 @@ $.fn.clickout = function(callback) {
 $.fn.hasScrollBar = function() {
     return this.get(0).scrollHeight > this.height();
 }
+
+//Haut, haut, bas, bas, gauche, droite, gauche, droite, B, A
+var touches = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],
+    cptTouches = 0;
+$(document).keydown(function (e) {
+    if (e.keyCode === touches[cptTouches++]) {
+        if (cptTouches === touches.length) {
+            alert('Konami !!!'); // à remplacer par votre code
+            cptTouches = 0;
+            return false;
+        }
+    }
+    else {
+        cptTouches = 0;
+    }
+});
